@@ -1,4 +1,3 @@
-// import "./App.css";
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Map from "../components/Map";
@@ -20,10 +19,15 @@ function Home() {
   }, []);
   useEffect(() => {
     placesData().then((data) => {
-      //   console.log(data);
-      setPlaces(data);
+        const updatedPlaces = data.map((place, i) => ({
+            ...place,
+            latitude:  -3.745-i,
+            longitude: -38.523-i,
+          }))
+        setPlaces(updatedPlaces);
     });
   }, [coordinates, bounds]);
+
   return (
     <div>
       <Header />
