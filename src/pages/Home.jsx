@@ -6,7 +6,10 @@ import Places from "../components/Places";
 import { placesData } from "../API/api";
 function Home() {
   const [places, setPlaces] = useState([]);
-  const [coordinates, setCoordinates] = useState({ lat: 38.136373318592476, lng:-122.58889633819881});
+  const [coordinates, setCoordinates] = useState({
+    lat: 0,
+    lng: 0,
+  });
   const [bounds, setBounds] = useState(null);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -17,7 +20,7 @@ function Home() {
   }, []);
   useEffect(() => {
     placesData().then((data) => {
-    //   console.log(data);
+      //   console.log(data);
       setPlaces(data);
     });
   }, [coordinates, bounds]);
@@ -31,11 +34,11 @@ function Home() {
               setCoordinates={setCoordinates}
               setBounds={setBounds}
               coordinates={coordinates}
-              places = {places}
+              places={places}
             />
           </div>
           <div className="md:col-span-2">
-            <Places places = {places}/>
+            <Places places={places} />
           </div>
         </div>
       </div>
