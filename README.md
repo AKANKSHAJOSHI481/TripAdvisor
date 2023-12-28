@@ -1,18 +1,23 @@
-# React & Tailwind CSS Starter Pack
+# Trip Advisor
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+This is my submission to frontend development intern task of Shopflo.
 
 ## Usage
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
+To run the application, follow these steps:
 
 1. Install the required packages.
     ```sh
     npm install
     ```
 
-1. Start the development server.
+2. Start the development server.
     ```sh
     npm start
     ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
+3. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
+
+## Assumptions
+
+The latitude and longitude values present in the response of the MockAPI were not correct. They were not showing up anything when provided to google maps. So, I have changed the Latitude and Longitude values which are working.
+
